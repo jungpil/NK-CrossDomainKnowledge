@@ -73,10 +73,10 @@ public class Organization {
 		}
 		
 		if (!completed) {
-			System.out.println(period + "\t" + index + "\t" + searchStatusString + next + "\t" + location.toString() + "\t" + localFitnessString + globalFitness);
+			System.out.println(period + "\t" + index + "\t" + searchStatusString + next + "\tx" + location.toString() + "\t" + localFitnessString + globalFitness);
 		} else {
 			if (!lastPrinted) {
-				System.out.println(period + "\t" + index + "\t" + searchStatusString + next + "\t" + location.toString() + "\t" + localFitnessString + globalFitness);
+				System.out.println(period + "\t" + index + "\t" + searchStatusString + next + "\tx" + location.toString() + "\t" + localFitnessString + globalFitness);
 				lastPrinted = true;
 			}
 		}
@@ -96,10 +96,10 @@ public class Organization {
 		}
 		
 		if (!completed) {
-			pw.println(Globals.landscape.getLandscapeID() + "\t" + period + "\t" + index + "\t" + searchStatusString + next + "\t" + location.toString() + "\t" + localFitnessString + globalFitness);
+			pw.println(Globals.landscape.getLandscapeID() + "\t" + Globals.landscapeMax + "\t" + Globals.landscapeMin + "\t" + period + "\t" + index + "\t" + searchStatusString + next + "\t" + location.toString() + "\t" + localFitnessString + globalFitness);
 		} else {
 			if (!lastPrinted) {
-				pw.println(Globals.landscape.getLandscapeID() + "\t" + period + "\t" + index + "\t" + searchStatusString + next + "\t" + location.toString() + "\t" + localFitnessString + globalFitness);
+				pw.println(Globals.landscape.getLandscapeID() + "\t" + Globals.landscapeMax + "\t" + Globals.landscapeMin + "\t" + period + "\t" + index + "\t" + searchStatusString + next + "\t" + location.toString() + "\t" + localFitnessString + globalFitness);
 				lastPrinted = true;
 			}
 		}

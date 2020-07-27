@@ -20,27 +20,27 @@ public class CreateConf {
 // debug=false
 // fitnessCalc=ac2010
 
-    private static String path = "/home/jungpil/misq-koverlap/code/";
+    private static String path = "/Users/jungpil/git/misq-koverlap/code/";
     private static int[] busOverlap = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8}; 
     private static int[] isOverlap = new int[]{0, 1, 2, 3, 4, 5, 6, 7, 8}; 
     // private static String[] infMat = new String[]{"7ll", "7ur", "7bal"};
-    private static String[] infMat = new String[]{"7ll", "7ur"};
+    private static String[] infMat = new String[]{"7ll"};
     
     public static void main(String args[]) {
         for (int m = 0; m < infMat.length; m++) {
             for (int b = 0; b < busOverlap.length; b++) {
                 for (int i = 0; i < isOverlap.length; i++) {
-                    for (int rep = 0; rep < 10; rep++) {
-                        String outfilename = path + "results2/a_n16k" + infMat[m] + "-" + rep + "_" + busOverlap[b] + "_" + isOverlap[i] + "_0.txt";
-                        //String outfilename = path + "results/a_n16k" + infMat[m] + "_" + busOverlap[b] + "_" + isOverlap[i] + "_0.txt";
-                        String conffilename = path + "conf/a_n16k" + infMat[m] + "-" + rep + "_" + busOverlap[b] + "_" + isOverlap[i] + "_0.conf";
-                        //String conffilename = path + "conf/a_n16k" + infMat[m] + "_" + busOverlap[b] + "_" + isOverlap[i] + "_0.conf";
-                        String inffilename = path + "inf/" + infMat[m] + "-" + rep + ".txt";
-                        //String inffilename = path + "inf/" + infMat[m] + ".txt";
+                    // for (int rep = 0; rep < 10; rep++) {
+                        // String outfilename = path + "results/a_n16k" + infMat[m] + "-" + rep + "_" + busOverlap[b] + "_" + isOverlap[i] + "_0.txt";
+                        String outfilename = path + "results500/a_n16k" + infMat[m] + "_" + busOverlap[b] + "_" + isOverlap[i] + "_0.txt";
+                        // String conffilename = path + "conf/a_n16k" + infMat[m] + "-" + rep + "_" + busOverlap[b] + "_" + isOverlap[i] + "_0.conf";
+                        String conffilename = path + "conf/a_n16k" + infMat[m] + "_" + busOverlap[b] + "_" + isOverlap[i] + "_0.conf";
+                        // String inffilename = path + "inf/" + infMat[m] + "-" + rep + ".txt";
+                        String inffilename = path + "inf/" + infMat[m] + ".txt";
                         
                         try {
                             PrintWriter pw = new PrintWriter(new FileOutputStream(conffilename, false), true);
-                            pw.println("periods=300\nruns=100");
+                            pw.println("periods=500\nruns=100");
                             pw.println("outfile=" + outfilename);
                             pw.println("influenceMatrix=" + inffilename);
                             pw.println("numOrgs=100\nN=16");
@@ -52,7 +52,7 @@ public class CreateConf {
                             System.err.println(io.getMessage());
                             io.printStackTrace();
                         }
-                    }
+                    // }
                 }
             }
     

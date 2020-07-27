@@ -127,12 +127,14 @@ public class Simulation {
 	
 	private static void reportDetails(int period) {
 		for (Organization org : organizations) {
+			// System.out.print(Globals.landscapeMax + "\t" + Globals.landscapeMin + "\t");
 			org.printDetails(period);
 		}
 	}
 	
 	private static void reportDetails(PrintWriter pw, int period) {
 		for (Organization org : organizations) {
+			// pw.print(Globals.landscapeMax + "\t" + Globals.landscapeMin + "\t");
 			org.printDetails(pw, period);
 		}
 	}
